@@ -1,5 +1,22 @@
 # AWS Lambda 部署 SpringBoot 应用
 
+## 快速开始
+
+```bash
+git clone https://github.com/helloworlde/serverless-spring-boot.git
+cd serverless-spring-boot
+./gradlew clean build serverless-spring-boot
+
+# Local
+sam local start-api --template sam.yaml
+
+curl -s http://127.0.0.1:3000/ping
+
+# Deploy
+sls deploy
+```
+
+
 ## 配置 AWS CLI 和  Severless
 
 AWS CLI 和 Serverless 都可以用于部署 Serverless 应用
@@ -74,12 +91,12 @@ yarn global add aws-sam-local
 
 ```bash
 mvn archetype:generate \
-	   -DgroupId=io.github.helloworlde \
-       -DartifactId=serverless-spring-boot \
-	   -Dversion=1.0-SNAPSHOT \
-       -DarchetypeGroupId=com.amazonaws.serverless.archetypes \
-       -DarchetypeArtifactId=aws-serverless-springboot2-archetype \
-       -DarchetypeVersion=1.3.1
+        -DgroupId=io.github.helloworlde \
+        -DartifactId=serverless-spring-boot \
+        -Dversion=1.0-SNAPSHOT \
+        -DarchetypeGroupId=com.amazonaws.serverless.archetypes \
+        -DarchetypeArtifactId=aws-serverless-springboot2-archetype \
+        -DarchetypeVersion=1.3.1
 ```
 
 - 项目文件
